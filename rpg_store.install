@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function rpg_store_schema()
+{
+
+    $schema['weapons'] = array(
+        'description' => 'Weapons Table',
+        'weapon_id' => array(
+            'description' => 'weapon id',
+            'type' => 'serial',
+            'unsigned' => TRUE,
+            'not null' => TRUE,
+        ),
+        'weapon_attributes_id' => array(
+            'description' => 'Weapon Attributes ID',
+            'type' => 'int',
+            'not null' => TRUE
+        ),
+        'weapon_name' => array(
+            'description' => 'Weapon Name',
+            'type' => 'varchar',
+            'length' => 100,
+            'not null' => TRUE,
+            'default' => '',
+        ),
+        'weapon_type' => array(
+            'description' => 'Weapon Type',
+            'type' => 'varchar',
+            'length' => 100,
+            'not null' => TRUE,
+            'default' => '',
+        ),
+        'weapon_description' => array(
+            'description' => 'Weapon description',
+            'type' => 'varchar',
+            'length' => 100,
+            'not null' => TRUE,
+            'default' => '',
+        ),
+        'weapon_price' => array(
+            'description' => 'Weapon Price',
+            'type' => 'numeric',
+            'precision' => 6,
+            'not null' => TRUE,
+            'default' => 0,
+        ),
+        'weapon_features' => array(
+            'description' => 'Weapon Features',
+            'type' => 'varchar',
+            'length' => 100,
+            'not null' => TRUE,
+            'default' => '',
+        )
+    );
+}
